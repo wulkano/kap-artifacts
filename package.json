@@ -1,0 +1,16 @@
+{
+  "name": "kap-artifacts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Fernandes <npm@matheus.top> (https://matheus.top/)",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^6.6.3",
+    "micro": "^6.1.0"
+  }
+}
