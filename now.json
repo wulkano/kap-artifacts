@@ -1,3 +1,6 @@
 {
-  "alias": "kap-artifacts.now.sh"
+  "alias": "kap-artifacts.now.sh",
+  "env": {
+   "CIRCLE_TOKEN": "@circle-token"
+  }
 }

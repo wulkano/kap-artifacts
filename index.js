@@ -3,12 +3,18 @@ const {parse: parseUrl} = require('url')
 const got = require('got')
 const {send} = require('micro')
 
+const { CIRCLE_TOKEN } = process.env
+
+if (!CIRCLE_TOKEN) {
+  throw new Error('Missing CIRCLE_TOKEN env var')
+}
+
 module.exports = async function (req, res) {
   const {pathname} = parseUrl(req.url)
 
   const branch = pathname === '/' ? 'master' : pathname.slice(1)
 
-  const URL = `https://circleci.com/api/v1.1/project/github/wulkano/kap/latest/artifacts?circle-token=ed4fb603143a3fe7e91087ddfe92e15869a975ac&branch=${branch}`
+  const URL = `https://circleci.com/api/v1.1/project/github/wulkano/kap/latest/artifacts?circle-token=${CIRCLE_TOKEN}&branch=${branch}`
 
   try {
     const data = await got(URL, {json: true})
