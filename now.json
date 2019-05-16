@@ -1,6 +1,9 @@
 {
   "alias": "kap-artifacts.now.sh",
+  "name": "kap-artifacts",
+  "version": 2,
   "env": {
-   "CIRCLE_TOKEN": "@circle-token"
-  }
+    "CIRCLE_TOKEN": "@circle-token"
+  },
+  "builds": [{"src": "index.js", "use": "@now/node"}]
 }
